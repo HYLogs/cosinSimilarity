@@ -4,7 +4,6 @@ import numpy as np
 from numpy import dot
 from numpy.linalg import norm
 import PIL.Image as Image
-import time
 
 def cos_sim(A, B):
     return dot(A, B)/(norm(A)*norm(B))
@@ -37,7 +36,5 @@ def compare(targetPath, imgPaths):
         compares.append(similarity.item())
     return compares
 
-start = time.time()
 result = compare("1.png", [str(i)+".png" for i in range(2,6)])
 print(result)
-print("time :", time.time() - start)  # 현재시각 - 시작시간 = 실행 시간
